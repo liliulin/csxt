@@ -25,65 +25,71 @@ import dbutil.DBConnection;
  */
 public class AllKnowActionControl extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-       
-    /**
-     * @see HttpServlet#HttpServlet()
-     */
-    public AllKnowActionControl() {
-        super();
-        // TODO Auto-generated constructor stub
-    }
 
 	/**
-	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
+	 * @see HttpServlet#HttpServlet()
 	 */
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	public AllKnowActionControl() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+
+	/**
+	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse
+	 *      response)
+	 */
+	protected void doGet(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		response.getWriter().append("Served at: ").append(request.getContextPath());
 	}
 
 	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
+	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse
+	 *      response)
 	 */
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	protected void doPost(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		request.setCharacterEncoding("UTF-8");
 		response.setContentType("text/html;charset=UTF-8");
 		String searchReportDate = request.getParameter("reportDate").trim();
-		System.out.println("searchReportDate:"+searchReportDate);
-		AllKnownReportBean allKnowReportBean = null ;
+		System.out.println("searchReportDate:" + searchReportDate);
+		AllKnownReportBean allKnowReportBean = null;
 		ArrayList<AllKnownReportBean> allKnowList = new ArrayList<AllKnownReportBean>();
 		String request_uri = request.getRequestURI().trim();
-		System.out.println("requst_uri:"+request_uri);
+		System.out.println("requst_uri:" + request_uri);
 		String path = request_uri.substring(request_uri.indexOf("/", 1), request_uri.indexOf("."));
-		System.out.println("path:"+path);
-		String sql = "" ;
-		if("/allKnowAction".equals(path)) {
-			Connection con  = new DBConnection().getConnection();
-			ResultSet rs ;
-			// sql = "select * from allknownreport where reportdate like '%"+searchReportDate+"%'" ;
-			if("".equalsIgnoreCase(searchReportDate)) {
+		System.out.println("path:" + path);
+		String sql = "";
+		if ("/allKnowAction".equals(path)) {
+			Connection con = new DBConnection().getConnection();
+			ResultSet rs;
+			// sql = "select * from allknownreport where reportdate like
+			// '%"+searchReportDate+"%'" ;
+			if ("".equalsIgnoreCase(searchReportDate)) {
 				SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd");
 				searchReportDate = df.format(new Date());
-				sql = "select * from allknownreport where reportdate like '%"+searchReportDate+"%'" ; 
+				sql = "select * from allknownreport where reportdate like '%" + searchReportDate + "%'";
 			} else {
-				sql = "select * from allknownreport where reportdate like '%"+searchReportDate+"%'" ;		    
+				sql = "select * from allknownreport where reportdate like '%" + searchReportDate + "%'";
 			}
 			try {
-				Statement stmt  = con.createStatement();
+				Statement stmt = con.createStatement();
 				rs = stmt.executeQuery(sql);
-				if(rs!=null) {
-					while(rs.next()) {
+				if (rs != null) {
+					while (rs.next()) {
 						allKnowReportBean = new AllKnownReportBean();
 						int id = rs.getInt("id");
-						String project  = rs.getString("project");
+						String project = rs.getString("project");
 						String branch = rs.getString("branch");
 						String type = rs.getString("type");
-						String content =  rs.getString("content") ;
+						String content = rs.getString("content");
 						String result = rs.getString("result");
 						String testOnwer = rs.getString("testonwer");
-						String reportDate = new SimpleDateFormat("yyyy-MM-dd hh:mm:ss").format(rs.getTimestamp("reportdate"));
-						String reporter = rs.getString("reporter") ;
+						String reportDate = new SimpleDateFormat("yyyy-MM-dd hh:mm:ss")
+								.format(rs.getTimestamp("reportdate"));
+						String reporter = rs.getString("reporter");
 						allKnowReportBean.setId(id);
 						allKnowReportBean.setProject(project);
 						allKnowReportBean.setBranch(branch);
@@ -93,10 +99,10 @@ public class AllKnowActionControl extends HttpServlet {
 						allKnowReportBean.setTestOnwer(testOnwer);
 						allKnowReportBean.setReportDate(reportDate);
 						allKnowReportBean.setReporter(reporter);
-						allKnowList.add(allKnowReportBean);						
+						allKnowList.add(allKnowReportBean);
 					}
 				}
-			
+
 				request.setAttribute("allKnowList", allKnowList);
 			} catch (SQLException e) {
 				// TODO Auto-generated catch block
@@ -114,107 +120,28 @@ public class AllKnowActionControl extends HttpServlet {
 					// TODO Auto-generated catch block
 					e.printStackTrace();
 				}
-			}	
-			
-			if(allKnowList.isEmpty()) {
-				gotoPage("./views/noReport.jsp",request,response);
+			}
+
+			if (allKnowList.isEmpty()) {
+				gotoPage("./views/noReport.jsp", request, response);
 			} else {
-				gotoPage("./views/allKnowReport.jsp",request,response);
+				gotoPage("./views/allKnowReport.jsp", request, response);
 			}
-			
-			
+
 		} else {
-			gotoPage("../index.jsp",request,response);
+			gotoPage("../index.jsp", request, response);
 		}
-	
-		
+
 	}
-	
-//	protected void service(HttpServletRequest request, HttpServletResponse response)
-//			throws ServletException, IOException {
-//	//	String queryString = request.getQueryString();
-//		String parameter = request.getParameter("all").trim();
-//		System.out.println("parameter:"+parameter);
-////		String requestURI = request.getRequestURI();
-////		System.out.println("requestURI:"+requestURI);
-//		gotoPage("./views/allknownreport.jsp",request,response);
-////		response.setContentType("text/html");
-////		response.setCharacterEncoding("UTF-8");
-////		PrintWriter out = response.getWriter();
-////		out.print("<html>");
-////		out.print("<body>");
-////		out.print("this is reporter!");
-////		out.print("</body>");
-////		out.print("</html>");
-////		out.close();
-//	//	List allKnown = new ArrayList();
-//	//	request.setAttribute("allknownreport", allKnown);
-//	//	gotoPage("./views/allknownreport.jsp",request,response);
-//		
-//	}
-	
-	public void test() {
-		AllKnownReportBean allKnowReportBean = new AllKnownReportBean();
-		ArrayList<AllKnownReportBean> allKnowList = new ArrayList<AllKnownReportBean>();
-		Connection con  = new DBConnection().getConnection();
-		ResultSet rs ;
-	//	String sql = "select * from allknownreport" ;
-		String sql = "select * from allknownreport where reportdate like '%2018-11-29%'";
-		try {
-			Statement stmt  = con.createStatement();
-			rs = stmt.executeQuery(sql);
-			while(rs.next()) {
-				int id = rs.getInt("id");
-				String project  = rs.getString("project");
-				String branch = rs.getString("branch");
-				String type = rs.getString("type");
-				String content =  rs.getString("content") ;
-				String result = rs.getString("result");
-				String testOnwer = rs.getString("testonwer");
-				String reportDate = new SimpleDateFormat("yy-mm-dd hh:mm:ss").format(rs.getTimestamp("reportdate"));
-				String reporter = rs.getString("reporter") ;
-				allKnowReportBean.setId(id);
-				allKnowReportBean.setProject(project);
-				allKnowReportBean.setBranch(branch);
-				allKnowReportBean.setType(type);
-				allKnowReportBean.setContent(content);
-				allKnowReportBean.setResult(result);
-				allKnowReportBean.setTestOnwer(testOnwer);
-				allKnowReportBean.setReportDate(reportDate);
-				allKnowReportBean.setReporter(reporter);
-				allKnowList.add(allKnowReportBean);	
-				
-				System.out.println("allKnowList="+allKnowList.size());
-			
-			}
-		} catch (SQLException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-			try {
-				con.close();
-			} catch (SQLException e1) {
-				// TODO Auto-generated catch block
-				e1.printStackTrace();
-			}
-		}
-	}
-	
+
 	/**
 	 * gotoPage
 	 */
 	private void gotoPage(String targetURL, HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		RequestDispatcher rd ;
+		RequestDispatcher rd;
 		rd = request.getRequestDispatcher(targetURL);
 		rd.forward(request, response);
-	}
-	
-	public static void main(String[] args) {
-		AllKnowActionControl c = new AllKnowActionControl();
-		c.test();
-		//c.test();
-//		SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd");
-//		System.out.println("系统默认时间："+df.format(new Date()));
 	}
 
 }

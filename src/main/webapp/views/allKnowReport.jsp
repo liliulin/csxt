@@ -57,7 +57,7 @@
 		<td colspan=2 align="center">报告人</td>
 		<td><%=allKnowBean.getReporter() %></td>
 		<td align="center">报告时间</td>
-		<td align="center"><%=allKnowBean.getReportDate() %></td>
+		<td><%=allKnowBean.getReportDate() %></td>
 	</tr>
 <% 
 	}
