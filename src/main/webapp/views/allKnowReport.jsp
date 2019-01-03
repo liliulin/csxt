@@ -13,6 +13,7 @@
 		//alert("OK")
 	}
 </script>
+<title>上线周知报告</title>
 <html>
 <body>
 	<form name="allKnowReport" action="../allKnowAction.do" method="post">

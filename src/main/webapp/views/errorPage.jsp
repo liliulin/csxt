@@ -3,6 +3,7 @@
 <%@ page import="java.util.ArrayList" %>
 <%@ page import="java.util.List" %>
 <%@ page import="bean.AllKnownReportBean" %>
+<title>报告系统错误页面</title>
 <html>
 <body>
 <center>

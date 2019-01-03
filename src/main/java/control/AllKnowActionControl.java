@@ -70,9 +70,9 @@ public class AllKnowActionControl extends HttpServlet {
 			if ("".equalsIgnoreCase(searchReportDate)) {
 				SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd");
 				searchReportDate = df.format(new Date());
-				sql = "select * from allknownreport where reportdate like '%" + searchReportDate + "%'";
+				sql = "select * from all_known_report where reportdate like '%" + searchReportDate + "%'";
 			} else {
-				sql = "select * from allknownreport where reportdate like '%" + searchReportDate + "%'";
+				sql = "select * from all_known_report where reportdate like '%" + searchReportDate + "%'";
 			}
 			try {
 				Statement stmt = con.createStatement();

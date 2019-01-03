@@ -13,6 +13,7 @@
 		//alert("OK")
 	}
 </script>
+<title>搜索上线内容</title>
 <html>
 <body>
 <!-- onload="submitForm(); -->

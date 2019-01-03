@@ -76,7 +76,7 @@ public class AddAllKnowActionControl extends HttpServlet {
 				format.setLenient(false);
 				Timestamp  date = new Timestamp(new Date().getTime());
 				addAllKnowReport.setReportDate(date.toString());
-				sql = "insert into allknownreport (project,branch,type,content,result,testonwer,reporter,reportdate) values(?,?,?,?,?,?,?,?)";
+				sql = "insert into all_known_report (project,branch,type,content,result,testonwer,reporter,reportdate) values(?,?,?,?,?,?,?,?)";
 				try {
 				    pstmt = con.prepareStatement(sql);
 					pstmt.setString(1, addAllKnowReport.getProject());

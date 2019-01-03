@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>信息添加失败！</title>
+<title>报告系统信息添加失败！</title>
 </head>
 <body>
 <center>

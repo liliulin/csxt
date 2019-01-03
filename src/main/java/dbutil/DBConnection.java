@@ -13,9 +13,12 @@ import com.mysql.jdbc.Connection;
  */
 public class DBConnection {
 	String driver = "com.mysql.jdbc.Driver";
-	String test_url = "jdbc:mysql://localhost:3306/report";
+//	String test_url = "jdbc:mysql://localhost:3306/report";
+	String test_url = "jdbc:mysql://localhost:3306/report?useunicode=true&characterEncoding=utf8";
+//	String test_url = "jdbc:mysql://139.129.108.180:3306/report?useunicode=true&characterEncoding=utf8";
 	String test_user = "root";
-	String test_password = "mjitech";
+//	String test_password = "mjitech";
+	String test_password = "Mjitech20!6";  //发布环境
 	public Connection conn;
 
 	/**

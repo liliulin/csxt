@@ -6,9 +6,10 @@
 		alert("OK");
 	}
 </script>
+<title>怪兽家报告系统</title>
 <html>
 <body>
-<form name="report" action="action" method="post">
+<form name="report">
 <a href="./views/addAllKnowReport.jsp">让小怪兽添加今天上线的内容</a><br>
 <a href="./views/searchReport.jsp">让小怪兽告诉你测试周知报告</a><br>
 <a href="">让小怪兽告诉你测试详细报告</a><br>

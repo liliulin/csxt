@@ -7,6 +7,7 @@
 		//alert("OK")
 	}
 </script>
+<title>添加上线周知内容</title>
 <html>
 <body>
 	<form name="addAllKnowReport" action="../addAllKnowAction.do" method="post">
