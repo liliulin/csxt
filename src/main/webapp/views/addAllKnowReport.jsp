@@ -7,80 +7,75 @@
 		//alert("OK")
 	}
 </script>
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" type="text/css" href="../css/normalize.css" />
+<link rel="stylesheet" type="text/css" href="../css/demo.css">
+<link rel="stylesheet" href="../css/style.css">
+<link rel="stylesheet" href="../css/addall.css">
 <title>添加上线周知内容</title>
+</head>
+
 <html>
 <body>
-	<form name="addAllKnowReport" action="../addAllKnowAction.do" method="post">
-	<table border=1  width="80%" heigh="80%" cellspacing="0">
-	<tr>
-		<td colspan=5 align="center" >华沁上线测试报告</td>
-	</tr>
-	<tr>
-		<td colspan=5>上线项目：<input type="text" name="projectName"></td>
-	</tr>
-	<tr>
-	<td colspan=5>上线分支:<input type="text" name="branch"></td>
-	</tr>
-	<tr>
-	<td colspan=5 align="center" bgcolor=greenyellow>本次上线内容</td>
-	</tr>
-	<tr bgcolor=greenyellow align="center">
-		<td align="center">类型</td>
-		<td align="center">上线内容描述</td>
-		<td align="center">测试结果</td>
-		<td>负责人</td>
-	</tr>
-	
-	<tr>
-		<td align="center">
-			<select name="type">
-				<option value="需求" selectted="需求">需求</option>
-			    <option value="BUG">BUG</option>
-			</select>
-		</td>
-		<td><input type="textArea" name="content" row="2" cols="50"></textArea></td>
-			<td align="center">
-				<select name="result">
-				<option value="通过" selected="通过">通过</option>
-				<option value="不通过">不通过</option>
-				</select>
-			</td>
-		<td><input type="text" name="onwer"></td>
-	</tr>
-	
-	<tr>
-		<td align="center">报告人</td>
-		<td>
-			<select name="reporter" style="width:100px;">
-				<option value="曹越">曹越</option>
-				<option value="史令天">史令天</option>
-				<option value="刘思妍">刘思妍</option>
-				<option value="王刚">王刚</option>
-			</select>
-		</td>
-		<td colspan="2">
-			<input type="submit" name="submit" value="添加保存">
-		</td>
-	</tr>
+	<div class="satic-area">
+    <div class="dynamic-area1"></div>
+    <div class="dynamic-area2"></div>
+</div>
+<form name="addAllKnowReport" action="../addAllKnowAction.do" method="post" class="contact" id="con">
+    <fieldset class="contact-inner" >
+        <h1>华沁上线测试报告</h1>
+        <p class="contact-input">
+            上线项目<input type="text" name="name" placeholder="maxBox后台服务" autofocus>
+        </p>
+        <p class="contact-input">
+            上线分支<input type="text" name="name" placeholder="master" autofocus>
+        </p>
 
-<!-- 
-	<tr>
-		<td>002</td>
-		<td>需求</td>
-		<td>需求id=24 怪兽家总部店面不加创建新品校验</td>
-		<td>通过</td>
-		<td>产品：运营-董猛<br>研发：彭国辉 <br>测试：王刚</td>
-	<tr>
-	<tr>
-		<td>003</td>
-		<td>需求</td>
-		<td>需求id=24 怪兽家总部店面不加创建新品校验</td>
-		<td>通过</td>
-		<td>产品：运营-董猛<br>研发：彭国辉 <br>测试：王刚</td>
-	<tr>
-	 -->
-</table>
-<br>
+        <p class="contact-input">类型
+            <label for="select" class="select">
+                <select name="subject" id="select">
+                    <option value="" selected>Bug</option>
+                    <option value="1">新需求</option>
+                </select>
+            </label>
+        </p>
+
+        <p class="contact-input">
+            上线内容描述<input type="text" name="name" placeholder="" autofocus>
+        </p>
+
+        <p class="contact-input">测试结果
+            <label for="select" class="select">
+                <select name="subject" id="select1">
+                    <option value="" selected>通过</option>
+                    <option value="1">不通过</option>
+                </select>
+            </label>
+        </p>
+
+        <p class="contact-input">
+            负责人<input type="text" name="name" placeholder="" autofocus>
+        </p>
+
+        <p class="contact-input">报告人
+            <label for="select" class="select">
+                <select name="subject" id="select2">
+                    <option value="" selected>曹越</option>
+                    <option value="1">史令天</option>
+                    <option value="" selected>刘思妍</option>
+                    <option value="1">王刚</option>
+                </select>
+            </label>
+        </p>
+
+
+        <p class="contact-submit" id="btn-con">
+            <input type="submit" value="添加保存" id="btn" name="submit">
+        </p>
+    </fieldset>
 </form>
 </body>
 </html>
