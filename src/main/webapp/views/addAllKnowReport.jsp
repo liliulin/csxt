@@ -1,4 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
+﻿<%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
     
 <script type="text/javascript">
@@ -16,6 +16,7 @@
 <link rel="stylesheet" href="../css/style.css">
 <link rel="stylesheet" href="../css/addall.css">
 <title>添加上线周知内容</title>
+
 </head>
 
 <html>
@@ -28,45 +29,45 @@
     <fieldset class="contact-inner" >
         <h1>华沁上线测试报告</h1>
         <p class="contact-input">
-            上线项目<input type="text" name="name" placeholder="maxBox后台服务" autofocus>
+            上线项目<input type="text" name="projectName">
         </p>
         <p class="contact-input">
-            上线分支<input type="text" name="name" placeholder="master" autofocus>
+            上线分支<input type="text" name="branch">
         </p>
 
-        <p class="contact-input">类型
-            <label for="select" class="select">
-                <select name="subject" id="select">
-                    <option value="" selected>Bug</option>
-                    <option value="1">新需求</option>
+        <p class="contact-input" >类型
+            <label for="select" class="select" name="type">
+                <select name="type" id="select">
+                    <option value="Bug">Bug</option>
+                    <option value="需求">需求</option>
                 </select>
             </label>
         </p>
 
         <p class="contact-input">
-            上线内容描述<input type="text" name="name" placeholder="" autofocus>
+            上线内容描述<input type="text" name="content" placeholder="" autofocus>
         </p>
 
-        <p class="contact-input">测试结果
-            <label for="select" class="select">
-                <select name="subject" id="select1">
-                    <option value="" selected>通过</option>
-                    <option value="1">不通过</option>
+        <p class="contact-input" >测试结果
+            <label for="select" class="select" name="result">
+                <select name="result" id="select1">
+                    <option value="通过" >通过</option>
+                    <option value="不通过">不通过</option>
                 </select>
             </label>
         </p>
 
         <p class="contact-input">
-            负责人<input type="text" name="name" placeholder="" autofocus>
+            负责人<input type="text" name="onwer" >
         </p>
 
         <p class="contact-input">报告人
-            <label for="select" class="select">
-                <select name="subject" id="select2">
-                    <option value="" selected>曹越</option>
-                    <option value="1">史令天</option>
-                    <option value="" selected>刘思妍</option>
-                    <option value="1">王刚</option>
+            <label for="select" class="select"  name="reporter">
+                <select name="reporter" id="select2">
+                    <option value="曹越" >曹越</option>
+                    <option value="史令天">史令天</option>
+                    <option value="刘思妍" >刘思妍</option>
+                    <option value="王刚">王刚</option>
                 </select>
             </label>
         </p>

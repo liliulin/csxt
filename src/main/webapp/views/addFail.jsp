@@ -4,11 +4,11 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>报告系统信息添加失败！</title>
 <link href="../css/normalize.css" rel="stylesheet" type="text/css">
 <link href="../css/demo.css" rel="stylesheet" type="text/css">
 <link href="../css/style.css" rel="stylesheet" type="text/css">
 <link href="../css/addfa.css" rel="stylesheet" type="text/css">
-<title>报告系统信息添加失败！</title>
 </head>
 <body>
 

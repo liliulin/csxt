@@ -57,6 +57,7 @@ public class AddAllKnowActionControl extends HttpServlet {
 		String reporter = request.getParameter("reporter").trim();
 		AllKnownReportBean addAllKnowReport = null ;
 		String request_uri = request.getRequestURI().trim();
+//		String path = request_uri.substring(request_uri.indexOf("/",1), request_uri.indexOf("."));
 		String path = request_uri.substring(request_uri.indexOf("/",1), request_uri.indexOf("."));
 		String sql = "" ;
 		int number = 0;

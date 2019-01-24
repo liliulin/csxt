@@ -8,13 +8,13 @@ body{
 }
 
 #con{
-    width: 1900px;
+    width: 1600px;
     height: 480px;
     text-align: center;
     position:absolute;
     top:50%;
     left:50%;
-    margin:-180px 0 0 -700px;
+    margin:-180px 0 0 -500px;
     overflow-x:hidden;
     overflow-y:hidden;
     /*background: #2fa0ec;*/
@@ -31,27 +31,27 @@ body{
 }
 
 #con ul li{
-    width: 270px;
-    height: 270px;
+    width: 205px;
+    height: 205px;
     display: inline;
     float: left;
     overflow-x:hidden;
     overflow-y:hidden;
     position: relative;
-    top: 20px;
+    top: 50px;
 }
 
 li{
     list-style: none;
-    width: 270px;
-    height: 270px;
+    width: 205px;
+    height: 205px;
     border-radius: 20px;
-    margin-left: 40px;
+    margin-left: 20px;
 }
 
 img{
-    width:230px;
-    height: 230px;
+    width:200px;
+    height: 200px;
 }
 
 h4{

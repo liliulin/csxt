@@ -35,15 +35,15 @@
         <img  src="../image/three.png" class="img"/><br>
         <div id="lanrenzhijia">
             <input class="jcDate" style="width:200px; height:28px; line-height:28px; padding:4px;" />
-            <input type="submit" value="搜索" id="ipt">
+            <input type="submit" value="搜索" id="ipt"  name="reportDate">
 
         </div>
        
-        <a href="../index.jsp" class="an">
-        <button class="btn" id="btn">
-            回到首页
-        </button>
-    </a>
+         
+        
+        <a href="../index.jsp" class="an" id="btn">回到首页</a>
+
+    
         <br>
     </form>
 
